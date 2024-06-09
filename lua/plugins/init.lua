@@ -12,13 +12,12 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
   },
 
-  --These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -26,6 +25,41 @@ return {
       require "configs.lspconfig"
     end,
   },
+
+  --{
+  --  "mfussenegger/nvim-dap",
+  --  depedencies = {
+  --    "rcarriga/nvim-dap-ui",
+  --    "theHamstra/nvim-dap-virtual-text",
+  --    "mrcjkb/rustaceanvim",
+  --  },
+  --  config = function()
+  --    local dap = require "dap"
+  --    local dapui = require "dapui"
+  --    local rustacean = require "rustaceanvim"
+  --    local path = vim.fn.stdpath "data"
+  --    rustacean.server.on_attach = require("nvchad.configs.lspconfig").on_attach
+  --    require("dap").setup()
+  --    require("dapui").setup()
+
+  --    dap.adapters.codelldb = {
+  --      type "server",
+  --      -- host = "127.0.0.1",
+  --      port = "13000",
+  --      executable = {
+  --        command = path + "/mason/bin/codelldb",
+  --        args = { "--port", "13000" },
+  --      },
+  --    }
+
+  --    dap.adapters.coreclr = {
+  --      type = "executable",
+  --      command = path + "/netcoredbg",
+  --      args = { "--interpreter=vscode" },
+  --    }
+  --  end,
+  --},
+
   {
     "williamboman/mason.nvim",
     opts = {
@@ -46,10 +80,13 @@ return {
         "gopls",
         "rust-analyzer",
         --[DAP]
-        "codelldb",
-        "go-debug-adapter",
-        "netcoredbg",
-        "chrome-debug-adapter",
+        -- "codelldb",
+        -- try dedicated
+        -- "go-debug-adapter",
+        -- doesnt work on macos without another package
+        -- "netcoredbg",
+        -- try dedicated
+        -- "chrome-debug-adapter"],
         --[LINTER]
         --[FORMATTER]
         "prettier",
