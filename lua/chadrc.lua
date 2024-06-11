@@ -7,7 +7,7 @@ require "etc.functions"
 local M = {}
 
 M.ui = {
-  theme = "solarized_osaka",
+  theme = "gruvbox",
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
@@ -17,7 +17,6 @@ M.ui = {
     },
   },
 
-  transparency = true,
   nvdash = {
     header = Split_string_by_newline(Pick_random_variable_pairs(Asciis)),
     load_on_startup = true,
