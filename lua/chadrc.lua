@@ -22,4 +22,5 @@ M.ui = {
     load_on_startup = true,
   },
 }
+
 return M

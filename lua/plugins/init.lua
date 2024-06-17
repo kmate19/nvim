@@ -1,4 +1,5 @@
 return {
+
   {
     "airblade/vim-rooter",
     lazy = false,
@@ -10,6 +11,7 @@ return {
       ]]
     end,
   },
+
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
@@ -53,6 +55,7 @@ return {
       },
     },
   },
+
   --{
   --  "mfussenegger/nvim-dap",
   --  depedencies = {
@@ -95,7 +98,6 @@ return {
         "taplo",
         "yaml-language-server",
         "json-lsp",
-        -- "nil",
         "lua-language-server",
         "html-lsp",
         "css-lsp",
@@ -121,6 +123,7 @@ return {
       },
     },
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -149,5 +152,16 @@ return {
         "go",
       },
     },
+  },
+
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup()
+    end,
   },
 }
