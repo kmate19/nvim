@@ -12,6 +12,7 @@ return {
       -- Move to previous/next
       map('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', opts)
       map('n', '<Tab>', '<Cmd>BufferNext<CR>', opts)
+      map('n', '<leader>x', '<Cmd>BufferClose<CR>', opts)
       vim.g.barbar_auto_setup = false
     end,
     opts = {

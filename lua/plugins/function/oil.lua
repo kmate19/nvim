@@ -12,6 +12,8 @@ return {
           'size',
         },
       }
+      -- open oil
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory with Oil.' })
     end,
   },
 }
