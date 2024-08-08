@@ -1,11 +1,6 @@
 local G = vim.g
 local O = vim.opt
 
-G.mapleader = ' '
-G.localleader = ' '
-
-G.have_nerd_font = true
-
 O.shiftwidth = 2
 O.tabstop = 2
 O.autoindent = true

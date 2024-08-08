@@ -1,4 +1,7 @@
 vim.opt.termguicolors = true
+vim.g.mapleader = ' '
+vim.g.localleader = ' '
+vim.g.have_nerd_font = true
 
 require 'opts'
 require 'mappings'
@@ -24,7 +27,7 @@ require('lazy').setup {
   spec = {
     { 'LazyVim/LazyVim' },
 
-    -- import/override with your plugins
+    -- import = 'lazyvim.plugins',
 
     { import = 'plugins.function' },
     { import = 'plugins.ui' },

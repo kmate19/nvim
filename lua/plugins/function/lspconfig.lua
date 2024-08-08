@@ -148,6 +148,7 @@ return {
         html = {},
         tsserver = {},
         tailwindcss = {},
+        eslint = {},
         cssls = {},
         rust_analyzer = {},
         zls = {},
