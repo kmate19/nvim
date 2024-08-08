@@ -17,9 +17,24 @@ return {
     end,
     opts = {
       -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
+      animation = false,
       -- insert_at_start = true,
       -- …etc.
     },
   },
+
+  -- {
+  --   'akinsho/bufferline.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function()
+  --     require('bufferline').setup {}
+  --     local map = vim.api.nvim_set_keymap
+  --     local opts = { noremap = true, silent = true }
+  --
+  --     -- Move to previous/next
+  --     map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', opts)
+  --     map('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', opts)
+  --     map('n', '<leader>x', '<Cmd>bd<CR>', opts)
+  --   end,
+  -- },
 }
