@@ -3,13 +3,12 @@ return {
     'stevearc/oil.nvim',
     lazy = false,
     opts = {},
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
     config = function()
       require('oil').setup {
         default_file_explorer = true,
         columns = {
           'icon',
-          'size',
         },
       }
       -- open oil
