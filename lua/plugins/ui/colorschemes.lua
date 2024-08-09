@@ -2,7 +2,6 @@ return {
 
   {
     'kevinm6/kurayami.nvim',
-    priority = 1000,
   },
 
   {
@@ -15,20 +14,18 @@ return {
 
   {
     'ofirgall/ofirkai.nvim',
-    priority = 1000,
   },
 
-  {
-    'craftzdog/solarized-osaka.nvim',
-    priority = 1000,
-    opts = {
-      transparent = false,
-    },
-  },
+  -- {
+  --   'craftzdog/solarized-osaka.nvim',
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = false,
+  --   },
+  -- },
 
   {
     'catppuccin/nvim',
-    priority = 1000,
     name = 'catppuccin',
   },
 }

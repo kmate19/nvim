@@ -3,12 +3,9 @@ return {
   opts = {},
   ft = {
     'javascript',
-    'javascripreact',
+    'javascriptreact',
     'typescript',
-    'typescripreact',
+    'typescriptreact',
     'html',
   },
-  config = function()
-    require('nvim-ts-autotag').setup()
-  end,
 }
