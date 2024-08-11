@@ -1,8 +1,8 @@
 local G = vim.g
 local O = vim.opt
 
-O.shiftwidth = 2
-O.tabstop = 2
+O.shiftwidth = 4
+O.tabstop = 4
 O.autoindent = true
 O.smartindent = true
 
@@ -35,3 +35,5 @@ O.inccommand = 'split'
 O.cursorline = true
 
 O.scrolloff = 15
+
+O.colorcolumn = '80'
