@@ -6,7 +6,7 @@ return {
       vim.keymap.set('n', '<leader>U', function()
         vim.cmd.UndotreeToggle()
         vim.cmd.UndotreeFocus()
-      end)
+      end, { desc = 'Open Undotree' })
     end,
   },
 }
