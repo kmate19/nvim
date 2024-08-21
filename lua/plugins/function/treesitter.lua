@@ -30,6 +30,11 @@ return {
           'zig',
           'go',
         },
+        sync_install = false,
+        auto_install = true,
+        indent = {
+          enable = true,
+        },
       }
     end,
   },

@@ -8,3 +8,10 @@ M.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]
 
 -- quick command mode in normal mode
 M.set('n', ';', ':')
+
+-- center things
+M.set('n', 'J', 'mzJ`z')
+M.set('n', '<C-d>', '<C-d>zz')
+M.set('n', '<C-u>', '<C-u>zz')
+M.set('n', 'n', 'nzzzv')
+M.set('n', 'N', 'Nzzzv')
