@@ -9,6 +9,10 @@ M.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]
 -- quick command mode in normal mode
 M.set('n', ';', ':')
 
+-- black hole register for c and x
+M.set('n', 'x', '"_x')
+M.set('n', 'c', '"_c')
+
 -- center things
 M.set('n', 'J', 'mzJ`z')
 M.set('n', '<C-d>', '<C-d>zz')
