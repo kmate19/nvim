@@ -12,6 +12,7 @@ M.set('n', ';', ':')
 -- black hole register for c and x
 M.set('n', 'x', '"_x')
 M.set('n', 'c', '"_c')
+M.set('n', 'r', '"_r')
 
 -- center things
 M.set('n', 'J', 'mzJ`z')
