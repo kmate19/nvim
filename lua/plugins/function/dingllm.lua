@@ -4,7 +4,8 @@ return {
   config = function()
     local system_prompt =
       'You should replace only the code that you are sent, only following the comments. Do not talk at all. Only output valid code. Do not provide any backticks that surround the code. Never ever output backticks like this ```. Any comment that is asking you for something should be removed after you satisfy them. Other comments should left alone. Do not output backticks'
-    local helpful_prompt = 'You are a helpful assistant. What I have sent are my notes so far.'
+    local helpful_prompt =
+      'You are a helpful assistant. What I have sent are my notes so far. If you detect a programming language, you MUST make every line you output a comment in that language!'
     local dingllm = require 'dingllm'
 
     -- local function handle_open_router_spec_data(data_stream)
