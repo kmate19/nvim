@@ -4,7 +4,6 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-      -- { 'j-hui/fidget.nvim', opts = {} },
       'hrsh7th/cmp-nvim-lsp',
     },
     opts = {},
@@ -146,7 +145,13 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         html = {},
-        tailwindcss = {},
+        tailwindcss = {
+          filetypes = {
+            'javascriptreact',
+            'typescriptreact',
+            'html',
+          },
+        },
         eslint = {},
         cssls = {},
         rust_analyzer = {},
@@ -155,10 +160,7 @@ return {
         cmake = {},
         gopls = {},
         tsserver = {},
-        csharp_ls = {},
-        taplo = {},
         jsonls = {},
-        yamlls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
