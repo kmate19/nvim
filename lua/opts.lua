@@ -1,8 +1,10 @@
 local O = vim.opt
 
-O.shiftwidth = 4
-O.tabstop = 4
-O.softtabstop = 4
+O.clipboard = 'unnamedplus'
+
+O.shiftwidth = 2
+O.tabstop = 2
+O.softtabstop = 2
 O.expandtab = true
 O.autoindent = true
 O.smartindent = true

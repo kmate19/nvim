@@ -14,13 +14,42 @@ return {
       map('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', opts)
       map('n', '<Tab>', '<Cmd>BufferNext<CR>', opts)
       map('n', '<leader>x', '<Cmd>BufferClose<CR>', { desc = 'Close Tab' })
-      vim.g.barbar_auto_setup = false
     end,
     opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
       animation = false,
-      -- insert_at_start = true,
-      -- …etc.
+      auto_hide = 0,
+      clickable = false,
+      icons = {
+        button = '',
+        -- Enables / disables diagnostic symbols
+        diagnostics = {
+          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+          [vim.diagnostic.severity.WARN] = { enabled = false },
+          [vim.diagnostic.severity.INFO] = { enabled = false },
+          [vim.diagnostic.severity.HINT] = { enabled = true },
+        },
+        gitsigns = {
+          added = { enabled = true, icon = '+' },
+          changed = { enabled = true, icon = '~' },
+          deleted = { enabled = true, icon = '-' },
+        },
+        filetype = {
+          -- Sets the icon's highlight group.
+          -- If false, will use nvim-web-devicons colors
+          custom_colors = false,
+
+          -- Requires `nvim-web-devicons` if `true`
+          enabled = true,
+        },
+        separator = { left = '▎', right = '' },
+
+        separator_at_end = true,
+
+        modified = { button = '●' },
+        pinned = { button = '', filename = true },
+
+        preset = 'default',
+      },
     },
   },
 

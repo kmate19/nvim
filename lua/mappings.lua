@@ -20,3 +20,9 @@ M.set('n', '<C-d>', '<C-d>zz')
 M.set('n', '<C-u>', '<C-u>zz')
 M.set('n', 'n', 'nzzzv')
 M.set('n', 'N', 'Nzzzv')
+
+--tmux
+M.set('n', '<C-h>', '<cmd>wincmd h<CR>')
+M.set('n', '<C-j>', '<cmd>wincmd j<CR>')
+M.set('n', '<C-k>', '<cmd>wincmd k<CR>')
+M.set('n', '<C-l>', '<cmd>wincmd l<CR>')
