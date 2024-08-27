@@ -7,13 +7,9 @@ return {
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function()
-      local map = vim.api.nvim_set_keymap
-      local opts = { noremap = true, silent = true }
-
-      -- Move to previous/next
-      map('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', opts)
-      map('n', '<Tab>', '<Cmd>BufferNext<CR>', opts)
-      map('n', '<leader>x', '<Cmd>BufferClose<CR>', { desc = 'Close Tab' })
+      vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>')
+      vim.keymap.set('n', '<Tab>', '<Cmd>BufferNext<CR>')
+      vim.keymap.set('n', '<leader>x', '<Cmd>BufferClose<CR>', { desc = 'Close Tab' })
     end,
     opts = {
       animation = false,
@@ -23,7 +19,7 @@ return {
         button = '',
         -- Enables / disables diagnostic symbols
         diagnostics = {
-          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'E' },
           [vim.diagnostic.severity.WARN] = { enabled = false },
           [vim.diagnostic.severity.INFO] = { enabled = false },
           [vim.diagnostic.severity.HINT] = { enabled = true },
@@ -45,34 +41,11 @@ return {
 
         separator_at_end = true,
 
-        modified = { button = '●' },
+        modified = { button = '.' },
         pinned = { button = '', filename = true },
 
         preset = 'default',
       },
     },
   },
-
-  --     'akinsho/bufferline.nvim',
-  --     dependencies = { 'nvim-tree/nvim-web-devicons' },
-  --     config = function()
-  --       require('bufferline').setup {
-  --         options = {
-  --           themeable = true,
-  --           diagnostics = 'nvim_lsp',
-  --           diagnostics_indicator = function(count, level)
-  --             local icon = level:match 'error' and ' ' or ' '
-  --             return ' ' .. icon .. count
-  --           end,
-  --         },
-  --       }
-  --       local map = vim.api.nvim_set_keymap
-  --       local opts = { noremap = true, silent = true }
-  --
-  --       -- Move to previous/next
-  --       map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', opts)
-  --       map('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', opts)
-  --       map('n', '<leader>x', '<Cmd>bd<CR>', opts)
-  --     end,
-  --   },
 }
