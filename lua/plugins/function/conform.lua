@@ -5,10 +5,14 @@ return {
       lua = { 'stylua' },
       css = { 'prettier' },
       html = { 'prettier' },
+      typescriptreact = { 'prettier' },
+      javascriptreact = { 'prettier' },
     },
 
+    async = true,
+
     format_on_save = {
-      timeout_ms = 500,
+      timeout = 500,
       lsp_fallback = true,
     },
   },
