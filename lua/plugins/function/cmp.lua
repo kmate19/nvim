@@ -33,12 +33,6 @@ return {
           -- completion = cmp.config.window.bordered(),
           -- documentation = cmp.config.window.bordered(),
         },
-        performance = {
-          max_view_entries = 14,
-          trigger_debounce_time = 500,
-          throttle = 550,
-          fetching_timeout = 80,
-        },
         mapping = cmp.mapping.preset.insert {
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),

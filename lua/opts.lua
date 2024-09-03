@@ -21,8 +21,6 @@ O.nu = true
 
 O.mouse = 'a'
 
-O.guicursor = ''
-
 O.showmode = true
 
 O.breakindent = true
