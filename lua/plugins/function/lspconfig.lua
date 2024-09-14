@@ -160,7 +160,7 @@ return {
         clangd = {},
         cmake = {},
         gopls = {},
-        tsserver = {},
+        ts_ls = {},
         jsonls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -210,9 +210,6 @@ return {
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
-            if server_name == 'tsserver' then
-              server_name = 'ts_ls'
-            end
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
