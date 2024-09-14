@@ -23,6 +23,7 @@ return {
           'typescript',
           'tsx',
           'c_sharp',
+          'python',
 
           'c',
           'cpp',
