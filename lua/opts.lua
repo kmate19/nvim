@@ -64,6 +64,6 @@ O.inccommand = 'split'
 
 -- O.cursorline = true
 
-O.scrolloff = 10
+O.scrolloff = 15
 
 O.colorcolumn = '80'
