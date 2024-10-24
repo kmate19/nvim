@@ -32,7 +32,7 @@ O.wrap = false
 O.swapfile = false
 O.backup = false
 
-O.background = 'dark'
+-- O.background = 'dark'
 
 O.relativenumber = true
 O.nu = true
