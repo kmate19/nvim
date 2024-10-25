@@ -177,6 +177,7 @@ return {
             'typescriptreact',
             'typescript',
             'javascript',
+            'vue',
           },
         },
         jsonls = {},
