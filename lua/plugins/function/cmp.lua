@@ -1,7 +1,7 @@
 return {
-  {
-    'hrsh7th/cmp-buffer',
-  },
+  -- {
+  --   'hrsh7th/cmp-buffer',
+  -- },
   {
     'hrsh7th/cmp-nvim-lsp',
     opts = {},
@@ -61,34 +61,32 @@ return {
           end, { 'i', 's' }),
         },
 
-        sources = cmp.config.sources({
+        sources = cmp.config.sources {
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- For luasnip users.
           { name = 'path' },
-        }, {
-          { name = 'buffer' },
-        }),
+        }, --   { --   { name = 'buffer' }, -- }
       }
 
       -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
       -- Set configuration for specific filetype.
       --[[ cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'git' },
-    }, {
-      { name = 'buffer' },
-    })
- })
- require("cmp_git").setup() ]]
+     sources = cmp.config.sources({
+       { name = 'git' },
+     }, {
+       { name = 'buffer' },
+     })
+  })
+  require("cmp_git").setup() ]]
       --
 
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' },
-        },
-      })
+      -- cmp.setup.cmdline({ '/', '?' }, {
+      --   mapping = cmp.mapping.preset.cmdline(),
+      --   sources = {
+      --     { name = 'buffer' },
+      --   },
+      -- })
 
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline(':', {

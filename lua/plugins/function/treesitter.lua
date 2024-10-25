@@ -18,6 +18,7 @@ return {
           'lua',
           'html',
           'css',
+          'vue',
           'javascript',
           'jsdoc',
           'typescript',
