@@ -1,24 +1,11 @@
 local O = vim.opt
 
--- if vim.fn.has 'wsl' then
---   vim.cmd [[
---   let g:clipboard = {
---                   \   'name': 'WslClipboard',
---                   \   'copy': {
---                   \      '+': 'clip.exe',
---                   \      '*': 'clip.exe',
---                   \    },
---                   \   'paste': {
---                   \      '+': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---                   \      '*': 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---                   \   },
---                   \   'cache_enabled': 0,
---                   \ }
--- ]]
--- else
---   O.clipboard = 'unnamedplus'
--- end
 O.clipboard = 'unnamedplus'
+
+-- if vim.fn.has 'wsl' then
+--   print 'WSL detected, setting clipboard to unnamed'
+--   O.clipboard = ''
+-- end
 
 O.shiftwidth = 2
 O.tabstop = 2
