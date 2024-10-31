@@ -5,5 +5,6 @@ return {
     'javascriptreact',
     'typescriptreact',
     'html',
+    'vue',
   },
 }
