@@ -2,11 +2,10 @@ return {
   {
     'williamboman/mason.nvim',
     build = ':MasonUpdate',
-    opts = {},
-  },
+    dependencies = {
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
+    },
 
-  {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {},
   },
 }

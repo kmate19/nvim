@@ -1,6 +1,8 @@
-vim.opt.termguicolors = true
+-- these need to come first
 vim.g.mapleader = ' '
 vim.g.localleader = ' '
+
+vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 
 require 'opts'

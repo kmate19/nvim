@@ -10,7 +10,7 @@ return {
       -- local util = require 'oil.util'
       -- local oil = require 'oil'
 
-      -- -- auto show previews . https://github.com/stevearc/oil.nvim/issues/357
+      ----- auto show previews . https://github.com/stevearc/oil.nvim/issues/357
       -- vim.api.nvim_create_autocmd('User', {
       --   pattern = 'OilEnter',
       --   callback = vim.schedule_wrap(function(args)

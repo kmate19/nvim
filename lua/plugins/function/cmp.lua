@@ -1,21 +1,9 @@
 return {
-  -- {
+  { 'hrsh7th/cmp-path' },
+  { 'hrsh7th/cmp-cmdline' },
+  { 'hrsh7th/cmp-nvim-lsp', opts = {} },
   --   'hrsh7th/cmp-buffer',
-  -- },
-  {
-    'hrsh7th/cmp-nvim-lsp',
-    opts = {},
-  },
-  {
-    'hrsh7th/cmp-path',
-  },
-  {
-    'hrsh7th/cmp-cmdline',
-  },
-  {
-    'saadparwaiz1/cmp_luasnip',
-  },
-
+  { 'saadparwaiz1/cmp_luasnip' },
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -30,8 +18,8 @@ return {
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          -- completion = cmp.config.window.bordered(),
+          -- documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert {
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -68,27 +56,8 @@ return {
         }, --   { --   { name = 'buffer' }, -- }
       }
 
-      -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
-      -- Set configuration for specific filetype.
-      --[[ cmp.setup.filetype('gitcommit', {
-     sources = cmp.config.sources({
-       { name = 'git' },
-     }, {
-       { name = 'buffer' },
-     })
-  })
-  require("cmp_git").setup() ]]
-      --
+      -- if i want to use git plugin in the future petertriho/cmp-git
 
-      -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-      -- cmp.setup.cmdline({ '/', '?' }, {
-      --   mapping = cmp.mapping.preset.cmdline(),
-      --   sources = {
-      --     { name = 'buffer' },
-      --   },
-      -- })
-
-      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({

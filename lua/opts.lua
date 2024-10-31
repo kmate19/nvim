@@ -1,56 +1,74 @@
 local O = vim.opt
 
+-- clipboard unnamedplus for system clipboard
 O.clipboard = 'unnamedplus'
 
--- if vim.fn.has 'wsl' then
---   print 'WSL detected, setting clipboard to unnamed'
---   O.clipboard = ''
--- end
-
-O.shiftwidth = 2
-O.tabstop = 2
-O.softtabstop = 2
+---- indenting
+O.shiftwidth = 4
+O.tabstop = 4
+O.softtabstop = 4
+-- spaces instead of tabs
 O.expandtab = true
 O.autoindent = true
 O.smartindent = true
+O.breakindent = true
 
+-- (no) folding
+O.foldenable = false
+O.foldmethod = 'manual'
+O.foldlevelstart = 99
+
+-- linewrap
 O.wrap = false
 
+-- swapfile/undofile
 O.swapfile = false
 O.backup = false
+O.undofile = true
 
--- O.background = 'dark'
-
+-- line numbers
 O.relativenumber = true
 O.nu = true
 
+-- usable mouse in all modes
 O.mouse = 'a'
 
+-- always show statusline
 O.showmode = true
 
-O.breakindent = true
-O.undofile = true
-
+-- search
 O.ignorecase = true
 O.smartcase = true
 O.incsearch = true
 
+-- no beep
+O.vb = true
+
+-- signcolumn
 O.signcolumn = 'yes'
 
-O.updatetime = 50
+-- update time for swapfile and cursorhold (not using swap)
+O.updatetime = 100
 
-O.timeoutlen = 300
+-- how long to wait for keypresses after pressing a modifier key eg. <C>
+O.timeoutlen = 450
 
-O.splitbelow = true
+-- split settings
 O.splitright = true
+O.splitbelow = true
 
+-- show invisible chars
 O.list = true
 O.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- prettier replace view
 O.inccommand = 'split'
 
+-- dont want cursorline for now
 -- O.cursorline = true
 
+-- i like big scrolloff
 O.scrolloff = 15
 
+-- line at 80 for code line length sanity
 O.colorcolumn = '80'

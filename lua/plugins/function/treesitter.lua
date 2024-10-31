@@ -6,15 +6,12 @@ return {
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
-          'vim',
-          'vimdoc',
+          -- misc
           'json',
           'yaml',
-          'toml',
-          'cmake',
-          'bash',
           'regex',
 
+          -- languages
           'lua',
           'html',
           'css',
@@ -23,11 +20,9 @@ return {
           'jsdoc',
           'typescript',
           'tsx',
-          'c_sharp',
           'python',
 
           'c',
-          'cpp',
           'rust',
           'zig',
           'go',

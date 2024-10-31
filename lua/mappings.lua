@@ -9,7 +9,7 @@ M.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]
 -- quick command mode in normal mode
 M.set('n', ';', ':')
 
--- black hole register for c and x
+-- black hole register for c, r and x so its not annoying
 M.set('n', 'x', '"_x')
 M.set('n', 'c', '"_c')
 M.set('n', 'r', '"_r')
@@ -21,7 +21,7 @@ M.set('n', '<C-u>', '<C-u>zz')
 M.set('n', 'n', 'nzzzv')
 M.set('n', 'N', 'Nzzzv')
 
---tmux
+-- tmux
 M.set('n', '<C-h>', '<cmd>wincmd h<CR>')
 M.set('n', '<C-j>', '<cmd>wincmd j<CR>')
 M.set('n', '<C-k>', '<cmd>wincmd k<CR>')

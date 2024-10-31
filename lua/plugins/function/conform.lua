@@ -9,6 +9,8 @@ return {
       javascriptreact = { 'prettier' },
     },
 
+    -- can cause issues if file is formatted too slowly
+    -- but is non blocking
     async = true,
 
     format_on_save = {
