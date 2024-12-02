@@ -160,6 +160,7 @@ return {
           filetypes = {
             'javascriptreact',
             'typescriptreact',
+            'vue',
             'html',
           },
         },
