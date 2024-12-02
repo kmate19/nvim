@@ -14,12 +14,11 @@ return {
   --   end,
   -- },
   {
-    'bluz71/vim-moonfly-colors',
-    name = 'moonfly',
+    'nyoom-engineering/oxocarbon.nvim',
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd 'colorscheme moonfly'
+      vim.cmd 'colorscheme oxocarbon'
     end,
   },
   -- 'rose-pine/neovim',
