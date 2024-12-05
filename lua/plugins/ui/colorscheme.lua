@@ -15,10 +15,22 @@ return {
   -- },
   {
     'nyoom-engineering/oxocarbon.nvim',
+    enabled = false,
     lazy = false,
     priority = 1000,
     init = function()
       vim.cmd 'colorscheme oxocarbon'
+    end,
+  },
+  {
+    'daschw/leaf.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+    init = function()
+      vim.cmd 'colorscheme leaf'
     end,
   },
   -- 'rose-pine/neovim',

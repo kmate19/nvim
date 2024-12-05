@@ -71,4 +71,4 @@ O.inccommand = 'split'
 O.scrolloff = 15
 
 -- line at 80 for code line length sanity
-O.colorcolumn = '80'
+-- O.colorcolumn = '80'
