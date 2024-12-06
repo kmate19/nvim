@@ -34,7 +34,7 @@ O.nu = true
 O.mouse = 'a'
 
 -- always show statusline
-O.showmode = true
+O.showmode = false
 
 -- search
 O.ignorecase = true
