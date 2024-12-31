@@ -171,7 +171,6 @@ return {
         rust_analyzer = {},
         zls = {},
         clangd = {},
-        cmake = {},
         gopls = {},
         ts_ls = {
           init_options = {
