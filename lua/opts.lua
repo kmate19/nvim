@@ -65,10 +65,10 @@ O.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 O.inccommand = 'split'
 
 -- dont want cursorline for now
--- O.cursorline = true
+O.cursorline = true
 
 -- i like big scrolloff
 O.scrolloff = 15
 
 -- line at 80 for code line length sanity
--- O.colorcolumn = '80'
+O.colorcolumn = '80'
