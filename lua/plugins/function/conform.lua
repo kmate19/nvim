@@ -7,6 +7,7 @@ return {
       html = { 'prettier' },
       typescriptreact = { 'prettier' },
       javascriptreact = { 'prettier' },
+      astro = { 'prettier' },
     },
 
     -- can cause issues if file is formatted too slowly

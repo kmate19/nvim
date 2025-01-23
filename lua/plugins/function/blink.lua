@@ -7,29 +7,37 @@ return {
   ---@type blink.cmp.Config
   opts = {
     snippets = {
-      expand = function(snippet)
-        require('luasnip').lsp_expand(snippet)
-      end,
-
-      active = function(filter)
-        if filter and filter.direction then
-          return require('luasnip').jumpable(filter.direction)
-        end
-        return require('luasnip').in_snippet()
-      end,
-
-      jump = function(direction)
-        require('luasnip').jump(direction)
-      end,
+      preset = 'luasnip',
+      -- expand = function(snippet)
+      --   require('luasnip').lsp_expand(snippet)
+      -- end,
+      --
+      -- active = function(filter)
+      --   if filter and filter.direction then
+      --     return require('luasnip').jumpable(filter.direction)
+      --   end
+      --   return require('luasnip').in_snippet()
+      -- end,
+      --
+      -- jump = function(direction)
+      --   require('luasnip').jump(direction)
+      -- end,
     },
     -- 'default' for mappings similar to built-in completion
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = 'super-tab' },
+    keymap = { preset = 'enter' },
 
     completion = {
       accept = { auto_brackets = { enabled = true } },
+      list = {
+        selection = {
+          preselect = function(ctx)
+            return ctx.mode ~= 'cmdline' and not require('blink.cmp').snippet_active { direction = 1 }
+          end,
+        },
+      },
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 250,
@@ -52,7 +60,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'luasnip', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
   },
   opts_extend = { 'sources.default' },
