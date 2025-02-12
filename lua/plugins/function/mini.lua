@@ -1,6 +1,7 @@
 return {
   {
     'echasnovski/mini.nvim',
+    dependencies = { 'echasnovski/mini.icons', opts = {} },
     config = function()
       require('mini.surround').setup()
       require('mini.pairs').setup()
