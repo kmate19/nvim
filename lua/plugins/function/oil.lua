@@ -24,15 +24,15 @@ return {
       --     end
       --   end),
       -- })
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'OilEnter',
-        callback = vim.schedule_wrap(function(args)
-          local oil = require 'oil'
-          if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
-            oil.open_preview()
-          end
-        end),
-      })
+      -- vim.api.nvim_create_autocmd('User', {
+      --   pattern = 'OilEnter',
+      --   callback = vim.schedule_wrap(function(args)
+      --     local oil = require 'oil'
+      --     if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+      --       oil.open_preview()
+      --     end
+      --   end),
+      -- })
 
       require('oil').setup {
         default_file_explorer = true,
@@ -47,7 +47,6 @@ return {
         },
         float = {
           max_width = 0.5,
-          preview_split = 'left',
           override = function(conf)
             local config = {
               row = 0,
