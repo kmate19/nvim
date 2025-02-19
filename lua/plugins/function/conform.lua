@@ -7,7 +7,8 @@ return {
       html = { 'prettier' },
       typescriptreact = { 'prettier' },
       javascriptreact = { 'prettier' },
-      astro = { 'prettier' },
+      typescript = { 'prettier' },
+      javascript = { 'prettier' },
     },
 
     -- can cause issues if file is formatted too slowly
@@ -15,7 +16,6 @@ return {
     async = true,
 
     format_on_save = {
-      timeout = 500,
       lsp_fallback = true,
     },
   },
