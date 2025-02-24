@@ -169,7 +169,6 @@ return {
         eslint = {},
         cssls = {},
         pyright = {},
-        rust_analyzer = {},
         omnisharp = {},
         astro = {},
         zls = {},
