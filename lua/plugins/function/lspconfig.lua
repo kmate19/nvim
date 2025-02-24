@@ -157,11 +157,20 @@ return {
       -- print(ts_plugin_vue)
       local servers = {
         html = {},
-        tailwindcss = {},
+        tailwindcss = {
+          filetypes = {
+            'javascriptreact',
+            'typescriptreact',
+            'astro',
+            'vue',
+            'html',
+          },
+        },
         eslint = {},
         cssls = {},
         pyright = {},
         rust_analyzer = {},
+        omnisharp = {},
         astro = {},
         zls = {},
         clangd = {},
