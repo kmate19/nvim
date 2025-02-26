@@ -48,7 +48,7 @@ O.vb = true
 O.signcolumn = 'yes'
 
 -- update time for swapfile and cursorhold (not using swap)
-O.updatetime = 100
+O.updatetime = 50
 
 -- how long to wait for keypresses after pressing a modifier key eg. <C>
 O.timeoutlen = 450
