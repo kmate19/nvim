@@ -9,13 +9,6 @@ require 'opts'
 require 'mappings'
 require 'autocmds'
 
-if vim.g.neovide then
-  vim.g.neovide_position_animation_length = 0
-  vim.g.neovide_scroll_animation_length = 0
-  vim.g.neovide_cursor_animation_length = 0
-  vim.g.neovide_cursor_trail_size = 0
-end
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'

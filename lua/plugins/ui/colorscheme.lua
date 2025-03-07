@@ -1,14 +1,8 @@
 return {
-  -- 'luisiacc/gruvbox-baby',
-  -- priority = 1000,
-  -- lazy = false,
-  -- init = function()
-  --   vim.cmd.colorscheme 'gruvbox-baby'
-  -- end,
-  'slugbyte/lackluster.nvim',
+  'vague2k/vague.nvim',
   priority = 1000,
   lazy = false,
   init = function()
-    vim.cmd.colorscheme 'lackluster-dark'
+    vim.cmd.colorscheme 'vague'
   end,
 }
