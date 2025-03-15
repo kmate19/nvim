@@ -15,6 +15,7 @@ return {
           'lua',
           'html',
           'css',
+          'svelte',
           'vue',
           'javascript',
           'jsdoc',
@@ -29,6 +30,11 @@ return {
         },
         sync_install = false,
         auto_install = true,
+
+        highlight = {
+          enable = true,
+        },
+
         indent = {
           enable = true,
         },

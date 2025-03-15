@@ -171,6 +171,7 @@ return {
         omnisharp = {},
         astro = {},
         zls = {},
+        svelte = {},
         clangd = {},
         gopls = {},
         ts_ls = {
