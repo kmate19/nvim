@@ -4,29 +4,11 @@ return {
   version = '*',
   build = 'cargo build --release',
   ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
   opts = {
     snippets = {
       preset = 'luasnip',
-      -- expand = function(snippet)
-      --   require('luasnip').lsp_expand(snippet)
-      -- end,
-      --
-      -- active = function(filter)
-      --   if filter and filter.direction then
-      --     return require('luasnip').jumpable(filter.direction)
-      --   end
-      --   return require('luasnip').in_snippet()
-      -- end,
-      --
-      -- jump = function(direction)
-      --   require('luasnip').jump(direction)
-      -- end,
     },
-    -- 'default' for mappings similar to built-in completion
-    -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-    -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-    -- See the full "keymap" documentation for information on defining your own keymap.
+
     keymap = { preset = 'enter' },
 
     completion = {
@@ -40,13 +22,17 @@ return {
       },
       documentation = {
         auto_show = true,
-        auto_show_delay_ms = 250,
+        auto_show_delay_ms = 0,
         treesitter_highlighting = true,
       },
     },
 
     signature = {
       enabled = true,
+      trigger = {
+        show_on_keyword = true,
+        show_on_insert = true,
+      },
     },
 
     fuzzy = { implementation = 'rust' },
@@ -62,7 +48,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'snippets', 'lsp', 'path', 'buffer' },
       providers = {
         cmdline = {
           enabled = function()
