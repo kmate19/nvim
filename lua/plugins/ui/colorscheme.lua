@@ -1,8 +1,9 @@
 return {
-  'vague2k/vague.nvim',
+  'sainnhe/sonokai',
   priority = 1000,
   lazy = false,
-  init = function()
-    vim.cmd.colorscheme 'vague'
+  config = function()
+    vim.g.sonokai_style = 'espresso'
+    vim.cmd.colorscheme 'sonokai'
   end,
 }
