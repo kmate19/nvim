@@ -1,9 +1,8 @@
 return {
-  'sainnhe/sonokai',
+  'craftzdog/solarized-osaka.nvim',
   priority = 1000,
   lazy = false,
   config = function()
-    vim.g.sonokai_style = 'espresso'
-    vim.cmd.colorscheme 'sonokai'
+    vim.cmd.colorscheme 'solarized-osaka'
   end,
 }
