@@ -14,32 +14,6 @@ return {
       vim.keymap.set('n', '<leader>B', function()
         dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
       end, { desc = 'Debug: Set Conditional Breakpoint' })
-
-      dap.adapters['pwa-node'] = {
-        type = 'server',
-        host = 'localhost',
-        port = '${port}',
-        executable = {
-          command = 'node',
-          args = { '/home/mate/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js', '${port}' },
-        },
-      }
-      dap.configurations.typescript = {
-        {
-          type = 'pwa-node',
-          request = 'launch',
-          name = 'Launch file',
-          runtimeExecutable = 'deno',
-          runtimeArgs = {
-            'run',
-            '--inspect-wait',
-            '--allow-all',
-          },
-          program = '${file}',
-          cwd = '${workspaceFolder}',
-          attachSimplePort = 9229,
-        },
-      }
     end,
   },
 
@@ -56,7 +30,7 @@ return {
   {
     'jay-babu/mason-nvim-dap.nvim',
     dependencies = {
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
       'mfussenegger/nvim-dap',
       'neovim/nvim-lspconfig',
     },
