@@ -1,14 +1,20 @@
 return {
   'zbirenbaum/copilot.lua',
-  cmd = 'Copilot',
-  event = 'InsertEnter',
-  config = function()
-    require('copilot').setup {
-      settings = {
-        telemetry = {
-          telemetryLevel = 'none',
-        },
+  opts = {
+    suggestion = {
+      auto_trigger = true,
+      keymap = {
+        accept = '<C-l>',
+        accept_word = '<M-l>',
+        accept_line = '<M-S-l>',
+        next = '<M-]>',
+        prev = '<M-[>',
+        dismiss = '<C-]>',
       },
-    }
-  end,
+    },
+    filetypes = {
+      markdown = true,
+      help = true,
+    },
+  },
 }
