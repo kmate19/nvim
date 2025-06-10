@@ -56,7 +56,8 @@ return {
         ts_ls = {},
         jsonls = {},
         stylua = {},
-        volar = {},
+        rust_analyzer = {},
+        vue_ls = {},
         prettierd = {},
         lua_ls = {},
       }
@@ -87,43 +88,60 @@ return {
         },
       })
 
-      local handle = io.popen 'npm root -g'
-      local package_path = ''
+      -- local handle = io.popen 'npm root -g'
+      -- local package_path = ''
+      --
+      -- if handle == nil then
+      --     vim.notify('Npm root not found, vue language server for ts wont work', vim.log.levels.WARN)
+      -- else
+      --     local global_root = handle:read('*a'):gsub('%s+$', '')
+      --     handle:close()
+      --
+      --     local package_name = '@vue/typescript-plugin'
+      --     package_path = global_root .. '/' .. package_name
+      --     local ts_plugin_handle = io.open(package_path)
+      --
+      --     if ts_plugin_handle == nil then
+      --         vim.notify('@vue/typescript-plugin not found, trying to install', vim.log.levels.WARN)
+      --         vim.system(
+      --             { 'npm', 'install', '-g', '@vue/typescript-plugin' },
+      --             { text = true }, -- get stdout/stderr as text
+      --             function(obj) -- callback when the job ends
+      --                 if obj.code == 0 then
+      --                     vim.notify('✅ Installed @vue/typescript-plugin globally', vim.log.levels.INFO)
+      --                 else
+      --                     vim.notify(('❌ npm install failed (exit %d):\n%s'):format(obj.code, obj.stderr),
+      --                         vim.log.levels.ERROR)
+      --                 end
+      --             end
+      --         )
+      --     else
+      --         ts_plugin_handle:close()
+      --     end
+      -- end
 
-      if handle == nil then
-        vim.notify('Npm root not found, vue language server for ts wont work', vim.log.levels.WARN)
-      else
-        local global_root = handle:read('*a'):gsub('%s+$', '')
-        handle:close()
-
-        local package_name = '@vue/typescript-plugin'
-        package_path = global_root .. '/' .. package_name
-        local ts_plugin_handle = io.open(package_path)
-
-        if ts_plugin_handle == nil then
-          vim.notify('@vue/typescript-plugin not found, trying to install', vim.log.levels.WARN)
-          vim.system(
-            { 'npm', 'install', '-g', '@vue/typescript-plugin' },
-            { text = true }, -- get stdout/stderr as text
-            function(obj) -- callback when the job ends
-              if obj.code == 0 then
-                vim.notify('✅ Installed @vue/typescript-plugin globally', vim.log.levels.INFO)
-              else
-                vim.notify(('❌ npm install failed (exit %d):\n%s'):format(obj.code, obj.stderr), vim.log.levels.ERROR)
-              end
-            end
-          )
-        else
-          ts_plugin_handle:close()
-        end
-      end
+      vim.lsp.config('rust_analyzer', {
+        settings = {
+          ['rust-analyzer'] = {
+            checkOnSave = {
+              command = 'clippy',
+            },
+            diagnostics = {
+              enable = false,
+            },
+            cargo = {
+              allFeatures = true,
+            },
+          },
+        },
+      })
 
       vim.lsp.config('ts_ls', {
         init_options = {
           plugins = {
             {
               name = '@vue/typescript-plugin',
-              location = package_path,
+              location = '',
               languages = { 'javascript', 'typescript', 'vue' },
             },
           },
