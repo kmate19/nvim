@@ -27,6 +27,8 @@ return {
 
           map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
+          map('E', vim.diagnostic.open_float, 'Open diagnostic float')
+
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           map('<leader>a', vim.lsp.buf.code_action, '[C]ode [A]ction')
@@ -57,7 +59,6 @@ return {
         ts_ls = {},
         jsonls = {},
         stylua = {},
-        -- rust_analyzer = {},
         vue_ls = {},
         prettierd = {},
         lua_ls = {},
@@ -92,12 +93,9 @@ return {
       vim.lsp.config('rust_analyzer', {
         settings = {
           ['rust-analyzer'] = {
-            checkOnSave = {
-              command = 'clippy',
-            },
-            cargo = {
-              allFeatures = true,
-            },
+            checkOnSave = false,
+            procMacro = { enable = true },
+            cargo = { allFeatures = true },
           },
         },
       })
