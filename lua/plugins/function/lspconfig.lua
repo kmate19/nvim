@@ -90,14 +90,22 @@ return {
       })
 
       vim.lsp.config('rust_analyzer', {
+        cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
         settings = {
           ['rust-analyzer'] = {
-            checkOnSave = false,
+            checkOnSave = { command = 'clippy' },
             procMacro = { enable = true },
             cargo = { allFeatures = true },
+            lspMux = {
+              version = '1',
+              method = 'connect',
+              server = 'rust-analyzer',
+            },
           },
         },
       })
+
+      vim.lsp.enable 'rust_analyzer'
 
       vim.lsp.config('ts_ls', {
         init_options = {
