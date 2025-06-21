@@ -1,5 +1,6 @@
 return {
   {
+    -- TODO: replace with snacks picker sometime
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
     opts = {},

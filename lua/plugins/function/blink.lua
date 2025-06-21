@@ -12,8 +12,8 @@ return {
     keymap = { preset = 'enter' },
 
     completion = {
-      accept = { auto_brackets = { enabled = true } },
       list = {
+        max_items = 60,
         selection = {
           preselect = function(ctx)
             return ctx.mode ~= 'cmdline' and not require('blink.cmp').snippet_active { direction = 1 }
@@ -23,7 +23,6 @@ return {
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 0,
-        treesitter_highlighting = true,
       },
     },
 

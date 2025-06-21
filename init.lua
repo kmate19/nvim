@@ -52,3 +52,10 @@ require('lazy').setup {
     },
   },
 }
+
+-- Set colorscheme based on time of day
+if tonumber(os.date '%H') > 19 then
+  vim.cmd.colorscheme 'nord'
+else
+  vim.cmd.colorscheme 'rose-pine'
+end

@@ -5,6 +5,7 @@ return {
     'javascriptreact',
     'typescriptreact',
     'html',
+    'svelte',
     'vue',
   },
 }

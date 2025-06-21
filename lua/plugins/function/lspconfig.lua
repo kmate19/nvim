@@ -93,9 +93,15 @@ return {
         cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
         settings = {
           ['rust-analyzer'] = {
-            checkOnSave = { command = 'clippy' },
-            procMacro = { enable = true },
-            cargo = { allFeatures = true },
+            cargo = { features = 'all' },
+            check = {
+              command = 'clippy',
+            },
+            diagnostics = {
+              styleLints = {
+                enable = true,
+              },
+            },
             lspMux = {
               version = '1',
               method = 'connect',

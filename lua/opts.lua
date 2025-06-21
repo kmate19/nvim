@@ -1,5 +1,7 @@
 local O = vim.opt
 
+vim.diagnostic.config { virtual_text = true, virtual_lines = false }
+
 -- clipboard unnamedplus for system clipboard
 O.clipboard = 'unnamedplus'
 
@@ -23,7 +25,6 @@ O.wrap = false
 
 -- swapfile/undofile
 O.swapfile = false
-O.backup = false
 O.undofile = true
 
 -- line numbers
@@ -48,7 +49,7 @@ O.vb = true
 O.signcolumn = 'yes'
 
 -- update time for swapfile and cursorhold (not using swap)
-O.updatetime = 50
+O.updatetime = 400
 
 -- how long to wait for keypresses after pressing a modifier key eg. <C>
 O.timeoutlen = 450
@@ -68,7 +69,7 @@ O.inccommand = 'split'
 O.cursorline = true
 
 -- i like big scrolloff
-O.scrolloff = 15
+O.scrolloff = 8
 
 -- line at 80 for code line length sanity
 O.colorcolumn = '80'
