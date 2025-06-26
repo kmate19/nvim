@@ -17,7 +17,7 @@ return {
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
-    indent = { enabled = true, animate = { enabled = false } },
+    -- indent = { enabled = true, animate = { enabled = false } },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {

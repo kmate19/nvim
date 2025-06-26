@@ -5,7 +5,8 @@ return {
     config = function()
       require('mini.surround').setup()
       require('mini.pairs').setup()
-      require('mini.statusline').setup()
+      -- try without statusline for a bit
+      -- require('mini.statusline').setup()
       require('mini.tabline').setup {
         vim.keymap.set('n', '<Tab>', ':bnext<CR>'),
         vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>'),
@@ -22,6 +23,7 @@ return {
     opts = {
       options = {
         custom_commentstring = function()
+          -- this is for ts comments in frameworks that have templates in the same file, like vue
           return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
         end,
       },

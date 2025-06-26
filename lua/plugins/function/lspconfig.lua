@@ -26,7 +26,11 @@ return {
 
           map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
+          map('<leader>tt', require('telescope.builtin').diagnostics, '[T]oggle [T]agbar')
+
           map('E', vim.diagnostic.open_float, 'Open diagnostic float')
+
+          map('K', vim.lsp.buf.hover, 'Open diagnostic float')
 
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
@@ -48,7 +52,6 @@ return {
         html = {},
         tailwindcss = {},
         cssls = {},
-        pyright = {},
         omnisharp = {},
         astro = {},
         zls = {},
@@ -58,7 +61,8 @@ return {
         ts_ls = {},
         jsonls = {},
         stylua = {},
-        vue_ls = {},
+        -- vue setup needs to be remade
+        -- vue_ls = {},
         prettierd = {},
         lua_ls = {},
       }
@@ -71,6 +75,7 @@ return {
 
       require('mason-lspconfig').setup {}
 
+      -- lua lsp config
       vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
@@ -89,6 +94,23 @@ return {
         },
       })
 
+      -- svelte
+      -- stolen from https://github.com/SylvanFranklin/.config/blob/main/nvim/lua/sylvanfranklin/plugins/lsp.lua
+      vim.lsp.config('svelte', {
+        require('lspconfig')['svelte'].setup {
+          on_attach = function(client, _)
+            vim.api.nvim_create_autocmd('BufWritePost', {
+              pattern = { '*.js', '*.ts' },
+              callback = function(ctx)
+                -- this bad boy updates imports between svelte and ts/js files
+                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+              end,
+            })
+          end,
+        },
+      })
+
+      -- rust lsp config
       vim.lsp.config('rust_analyzer', {
         -- remove ra-multiplex for now cause it just causes more issues than it solves
         -- cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
@@ -114,22 +136,25 @@ return {
 
       vim.lsp.enable 'rust_analyzer'
 
+      -- ts_ls config but im p sure this is broken rn
       vim.lsp.config('ts_ls', {
-        init_options = {
-          plugins = {
-            {
-              name = '@vue/typescript-plugin',
-              location = '',
-              languages = { 'javascript', 'typescript', 'vue' },
-            },
-          },
-        },
+        -- vue setup needs to be remade
+        -- init_options = {
+        --   plugins = {
+        --     {
+        --       name = '@vue/typescript-plugin',
+        --       location = '',
+        --       languages = { 'javascript', 'typescript', 'vue' },
+        --     },
+        --   },
+        -- },
         filetypes = {
           'javascriptreact',
           'typescriptreact',
           'typescript',
           'javascript',
-          'vue',
+          -- vue setup needs to be remade
+          -- 'vue',
         },
       })
     end,

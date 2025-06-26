@@ -13,19 +13,23 @@ return {
 
     completion = {
       list = {
+        -- limit max items to 60 to reduce performance issues, and realistically you wont need more than 60 items anyways
         max_items = 60,
         selection = {
+          -- dont preselect items in cmdline as i accept suggestions with enter so it would be annoying to have a preselected item
           preselect = function(ctx)
             return ctx.mode ~= 'cmdline' and not require('blink.cmp').snippet_active { direction = 1 }
           end,
         },
       },
+      -- show documentation in a floating window
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 0,
       },
     },
 
+    -- auto show function signatures on insert mode
     signature = {
       enabled = true,
       trigger = {
@@ -34,6 +38,7 @@ return {
       },
     },
 
+    -- only use rust binary for fuzzy matching
     fuzzy = { implementation = 'rust' },
 
     appearance = {
@@ -50,6 +55,7 @@ return {
       default = { 'snippets', 'lsp', 'path', 'buffer' },
       providers = {
         cmdline = {
+          -- disable suggestions for ! commands in cmdline as they freeze nvim up when a lot of things are in path
           enabled = function()
             return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match "^[%%0-9,'<>%-]*!"
           end,

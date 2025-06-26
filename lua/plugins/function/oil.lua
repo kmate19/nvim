@@ -7,6 +7,8 @@ return {
       { 'echasnovski/mini.icons', opts = {} },
     },
     config = function()
+      -- old cfg
+      --
       -- local util = require 'oil.util'
       -- local oil = require 'oil'
 
@@ -45,6 +47,7 @@ return {
             return name == '..' or name == '.git'
           end,
         },
+        -- float the oil window to the right side of the buffer, so i can still see the file im editing
         float = {
           max_width = 0.5,
           override = function(conf)
