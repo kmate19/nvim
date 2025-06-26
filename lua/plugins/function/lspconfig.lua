@@ -90,7 +90,8 @@ return {
       })
 
       vim.lsp.config('rust_analyzer', {
-        cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
+        -- remove ra-multiplex for now cause it just causes more issues than it solves
+        -- cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
         settings = {
           ['rust-analyzer'] = {
             cargo = { features = 'all' },
@@ -102,11 +103,11 @@ return {
                 enable = true,
               },
             },
-            lspMux = {
-              version = '1',
-              method = 'connect',
-              server = 'rust-analyzer',
-            },
+            -- lspMux = {
+            --   version = '1',
+            --   method = 'connect',
+            --   server = 'rust-analyzer',
+            -- },
           },
         },
       })
