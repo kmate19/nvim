@@ -67,14 +67,8 @@ return {
         lua_ls = {},
       }
 
-      local ensure_installed = vim.tbl_keys(servers or {})
-
-      require('mason').setup()
-
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      require('mason-lspconfig').setup {}
-
+      -- manual lsp configs
+      --
       -- lua lsp config
       vim.lsp.config('lua_ls', {
         settings = {
@@ -97,19 +91,22 @@ return {
       -- svelte
       -- stolen from https://github.com/SylvanFranklin/.config/blob/main/nvim/lua/sylvanfranklin/plugins/lsp.lua
       vim.lsp.config('svelte', {
-        require('lspconfig')['svelte'].setup {
-          on_attach = function(client, _)
-            vim.api.nvim_create_autocmd('BufWritePost', {
-              pattern = { '*.js', '*.ts' },
-              callback = function(ctx)
-                -- this bad boy updates imports between svelte and ts/js files
-                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-              end,
-            })
-          end,
+        settings = {
+          ['svelte'] = {
+            on_attach = function(client, _)
+              vim.api.nvim_create_autocmd('BufWritePost', {
+                pattern = { '*.js', '*.ts' },
+                callback = function(ctx)
+                  -- this bad boy updates imports between svelte and ts/js files
+                  client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+                end,
+              })
+            end,
+          },
         },
       })
 
+      -- MANUALLY MANAGED
       -- rust lsp config
       vim.lsp.config('rust_analyzer', {
         -- remove ra-multiplex for now cause it just causes more issues than it solves
@@ -133,7 +130,6 @@ return {
           },
         },
       })
-
       vim.lsp.enable 'rust_analyzer'
 
       -- ts_ls config but im p sure this is broken rn
@@ -157,6 +153,14 @@ return {
           -- 'vue',
         },
       })
+
+      local ensure_installed = vim.tbl_keys(servers or {})
+
+      require('mason').setup()
+
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      require('mason-lspconfig').setup {}
     end,
   },
 }

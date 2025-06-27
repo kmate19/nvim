@@ -1,4 +1,5 @@
 return {
+  -- TODO: look into this more later
   {
     'mfussenegger/nvim-dap',
     lazy = false,
@@ -37,8 +38,9 @@ return {
     config = function()
       require('mason-nvim-dap').setup {
         ensure_installed = {
-          'coreclr',
-          'js',
+          -- set this up again later
+          -- 'coreclr',
+          -- 'js',
         },
         automatic_installation = true,
         handlers = {
