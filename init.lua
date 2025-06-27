@@ -8,6 +8,7 @@ vim.g.have_nerd_font = true
 require 'opts'
 require 'mappings'
 require 'autocmds'
+require 'macros'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
