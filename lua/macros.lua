@@ -1,5 +1,6 @@
 local log_group = vim.api.nvim_create_augroup('logmacro', { clear = true })
 
+-- TODO: add support for visual mode but its a headache
 local function log_macro(type)
   local word = vim.fn.expand '<cword>'
 
