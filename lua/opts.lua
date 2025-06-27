@@ -10,6 +10,7 @@ O.clipboard = 'unnamedplus'
 O.shiftwidth = 4
 O.tabstop = 4
 O.softtabstop = 4
+
 -- spaces instead of tabs
 O.expandtab = true
 O.autoindent = true
@@ -59,8 +60,7 @@ O.timeoutlen = 450
 O.splitright = true
 O.splitbelow = true
 
--- show invisible chars
-O.list = true
+-- change how chars look in list mode
 O.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- prettier replace view
