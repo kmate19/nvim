@@ -88,24 +88,6 @@ return {
         },
       })
 
-      -- svelte
-      -- stolen from https://github.com/SylvanFranklin/.config/blob/main/nvim/lua/sylvanfranklin/plugins/lsp.lua
-      vim.lsp.config('svelte', {
-        settings = {
-          ['svelte'] = {
-            on_attach = function(client, _)
-              vim.api.nvim_create_autocmd('BufWritePost', {
-                pattern = { '*.js', '*.ts' },
-                callback = function(ctx)
-                  -- this bad boy updates imports between svelte and ts/js files
-                  client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-                end,
-              })
-            end,
-          },
-        },
-      })
-
       -- MANUALLY MANAGED
       -- rust lsp config
       vim.lsp.config('rust_analyzer', {
