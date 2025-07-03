@@ -44,7 +44,8 @@ O.showmode = false
 -- search
 O.ignorecase = true
 O.smartcase = true
-O.incsearch = true
+-- try not jumping around when searching
+O.incsearch = false
 
 -- no beep
 O.vb = true
