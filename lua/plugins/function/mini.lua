@@ -1,7 +1,14 @@
 return {
   {
     'echasnovski/mini.nvim',
-    dependencies = { 'echasnovski/mini.icons', opts = {} },
+    dependencies = {
+      'echasnovski/mini.icons',
+      config = function()
+        require('mini.icons').setup()
+        ---@diagnostic disable-next-line
+        MiniIcons.mock_nvim_web_devicons()
+      end,
+    },
     config = function()
       require('mini.surround').setup()
       require('mini.pairs').setup()

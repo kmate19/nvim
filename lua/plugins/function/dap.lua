@@ -3,6 +3,7 @@ return {
   {
     'mfussenegger/nvim-dap',
     lazy = false,
+    enabled = false,
     config = function()
       local dap = require 'dap'
       dap.set_log_level 'DEBUG'
@@ -20,6 +21,7 @@ return {
 
   {
     'rcarriga/nvim-dap-ui',
+    enabled = false,
     dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
     config = function()
       local dapui = require 'dapui'
@@ -30,6 +32,7 @@ return {
   },
   {
     'jay-babu/mason-nvim-dap.nvim',
+    enabled = false,
     dependencies = {
       'mason-org/mason.nvim',
       'mfussenegger/nvim-dap',
