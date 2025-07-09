@@ -38,9 +38,6 @@ O.nu = true
 -- usable mouse in all modes
 O.mouse = 'a'
 
--- always show statusline
-O.showmode = false
-
 -- search
 O.ignorecase = true
 O.smartcase = true
@@ -68,8 +65,6 @@ O.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- prettier replace view
 O.inccommand = 'split'
-
-O.cursorline = true
 
 -- i like big scrolloff
 O.scrolloff = 8
