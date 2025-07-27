@@ -55,11 +55,4 @@ require('lazy').setup {
 }
 
 -- Set colorscheme based on time of day
-vim.cmd.colorscheme 'nord'
--- change some hl groups to my liking
--- vim.api.nvim_set_hl(0, 'Comment', {
---   fg = '#4a2103',
--- })
--- vim.api.nvim_set_hl(0, 'String', {
---   fg = '#a210e6',
--- })
+vim.cmd.colorscheme 'sakura'

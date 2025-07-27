@@ -54,7 +54,7 @@ O.signcolumn = 'yes'
 O.updatetime = 400
 
 -- how long to wait for keypresses after pressing a modifier key eg. <C>
-O.timeoutlen = 450
+O.timeoutlen = 400
 
 -- split settings
 O.splitright = true
