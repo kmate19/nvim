@@ -41,8 +41,6 @@ O.mouse = 'a'
 -- search
 O.ignorecase = true
 O.smartcase = true
--- try not jumping around when searching
-O.incsearch = false
 
 -- no beep
 O.vb = true
