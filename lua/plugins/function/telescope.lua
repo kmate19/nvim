@@ -43,7 +43,9 @@ return {
         builtin.live_grep { grep_open_files = true }
       end, { desc = 'Telescope Live Grep Open Buffers' })
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope Search Buffers' })
-      require('telescope').load_extension 'fzf'
+      if vim.fn.has 'macunix' == 1 then
+        require('telescope').load_extension 'fzf'
+      end
     end,
   },
 }

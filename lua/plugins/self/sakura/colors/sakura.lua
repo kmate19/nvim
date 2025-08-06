@@ -139,7 +139,9 @@ local theme = lush(function(injected_functions)
     IncSearch { CurSearch }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute { bg = palette.sr9, fg = palette.sr0 }, -- |:substitute| replacement text highlighting
     CursorLineNr { fg = palette.fg1, italic = true, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MiniTablineCurrent { fg = palette.fg0, bg = palette.bg2, bold = true },
+    MiniTablineCurrent { fg = palette.fg3, bg = palette.bg3, bold = true },
+    MiniTablineVisible { fg = palette.fg0, bg = palette.bg0 },
+    MiniTablineHidden { fg = palette.fg0, bg = palette.bg0 },
     -- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
     -- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     -- MatchParen     { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|

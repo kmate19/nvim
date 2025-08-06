@@ -10,6 +10,17 @@ require 'mappings'
 require 'autocmds'
 require 'macros'
 
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    local arg = vim.fn.argv(0)
+    vim.notify(arg, 1, {})
+    if arg and vim.fn.isdirectory(arg) == 1 then
+      local target_dir = vim.fn.fnamemodify(arg, ':p:h')
+      vim.cmd('cd ' .. vim.fn.fnameescape(target_dir))
+    end
+  end,
+})
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'

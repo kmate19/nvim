@@ -114,6 +114,7 @@ return {
       })
       vim.lsp.enable 'rust_analyzer'
 
+      vim.lsp.enable 'gdscript'
       -- ts_ls config but im p sure this is broken rn
       vim.lsp.config('ts_ls', {
         -- vue setup needs to be remade
