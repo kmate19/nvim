@@ -5,7 +5,7 @@ return {
   ---@type snacks.Config
   -- TODO: check out the picker to replace telescope
   opts = {
-    bigfile = { enabled = true },
+    bigfile = { enabled = false },
     dashboard = { enabled = true },
     rename = { enabled = true },
     notifier = { enabled = true },
