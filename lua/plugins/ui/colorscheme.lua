@@ -50,4 +50,9 @@ return {
   {
     'xiyaowong/transparent.nvim',
   },
+
+  {
+    'stevedylandev/darkmatter-nvim',
+    commit = '5663ddc',
+  },
 }
