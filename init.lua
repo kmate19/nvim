@@ -65,4 +65,4 @@ require('lazy').setup {
 }
 
 -- Set colorscheme based on time of day
-vim.cmd.colorscheme 'darkmatter'
+vim.cmd.colorscheme 'gruvbox'

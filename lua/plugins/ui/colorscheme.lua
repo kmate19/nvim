@@ -24,6 +24,8 @@ return {
     priority = 1000,
   },
 
+  { 'ellisonleao/gruvbox.nvim', priority = 1000 },
+
   {
     'metalelf0/base16-black-metal-scheme',
     lazy = false,
