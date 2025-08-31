@@ -3,13 +3,13 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
-      css = { 'prettier' },
+      css = { 'prettierd' },
       rust = { 'rustfmt', lsp_format = 'fallback' },
-      html = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescript = { 'prettier' },
-      javascript = { 'prettier' },
+      html = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
+      typescript = { 'prettierd' },
+      javascript = { 'prettierd' },
     },
 
     -- can cause issues if file is formatted too slowly
