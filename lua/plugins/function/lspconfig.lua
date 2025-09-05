@@ -62,7 +62,8 @@ return {
         jsonls = {},
         stylua = {},
         -- vue setup needs to be remade
-        -- vue_ls = {},
+        vue_ls = {},
+        vtsls = {},
         prettierd = {},
         lua_ls = {},
       }
@@ -115,25 +116,36 @@ return {
       vim.lsp.enable 'rust_analyzer'
 
       vim.lsp.enable 'gdscript'
+
+      local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
+
+      local vue_plugin = {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+      }
+
+      vim.lsp.config('vtsls', {
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                vue_plugin,
+              },
+            },
+          },
+        },
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      })
+
       -- ts_ls config but im p sure this is broken rn
       vim.lsp.config('ts_ls', {
-        -- vue setup needs to be remade
-        -- init_options = {
-        --   plugins = {
-        --     {
-        --       name = '@vue/typescript-plugin',
-        --       location = '',
-        --       languages = { 'javascript', 'typescript', 'vue' },
-        --     },
-        --   },
-        -- },
         filetypes = {
           'javascriptreact',
           'typescriptreact',
           'typescript',
           'javascript',
-          -- vue setup needs to be remade
-          -- 'vue',
         },
       })
 
