@@ -53,6 +53,7 @@ return {
         tailwindcss = {},
         cssls = {},
         omnisharp = {},
+        jdtls = {},
         astro = {},
         zls = {},
         svelte = {},
@@ -115,6 +116,7 @@ return {
       })
       vim.lsp.enable 'rust_analyzer'
 
+      vim.lsp.enable 'sourcekit'
       vim.lsp.enable 'gdscript'
 
       local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
