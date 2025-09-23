@@ -116,6 +116,13 @@ return {
       })
       vim.lsp.enable 'rust_analyzer'
 
+      vim.lsp.config('sourcekit', {
+        filetypes = {
+          'swift',
+          'objc',
+          'objcpp',
+        },
+      })
       vim.lsp.enable 'sourcekit'
       vim.lsp.enable 'gdscript'
 
