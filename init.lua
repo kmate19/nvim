@@ -65,4 +65,4 @@ require('lazy').setup {
 }
 
 -- Set colorscheme based on time of day
-vim.cmd.colorscheme 'gruvbox'
+vim.cmd.colorscheme 'rose-pine-main'
