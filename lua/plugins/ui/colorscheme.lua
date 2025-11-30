@@ -12,6 +12,8 @@ return {
     name = 'rose-pine',
   },
 
+  { 'savq/melange-nvim', lazy = false, priority = 1000, name = 'melange' },
+
   {
     'slugbyte/lackluster.nvim',
     lazy = false,

@@ -3,7 +3,7 @@ local O = vim.opt
 -- want virtual text, but not virtual lines, virtual lines are too distracting, but look cool though, maybe look into it later
 vim.diagnostic.config { virtual_text = true, virtual_lines = false }
 
-O.winborder = 'rounded'
+O.winborder = 'single'
 
 -- clipboard unnamedplus for system clipboard
 O.clipboard = 'unnamedplus'
