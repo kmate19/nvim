@@ -10,17 +10,6 @@ require 'mappings'
 require 'autocmds'
 require 'macros'
 
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    local arg = vim.fn.argv(0)
-    vim.notify(arg, 1, {})
-    if arg and vim.fn.isdirectory(arg) == 1 then
-      local target_dir = vim.fn.fnamemodify(arg, ':p:h')
-      vim.cmd('cd ' .. vim.fn.fnameescape(target_dir))
-    end
-  end,
-})
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -36,6 +25,23 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+
+local disabled_plugins = function()
+  local disabled_plugins = {
+    'gzip',
+    'tarPlugin',
+    'tutor',
+    'zipPlugin',
+  }
+
+  if vim.fn.has 'macunix' then
+    table.insert(disabled_plugins, 'netrwPlugin')
+  else
+    vim.keymap.set('n', '-', '<CMD>Ex<CR>', { desc = 'Open parent directory with Netrw.' })
+  end
+
+  return disabled_plugins
+end
 
 require('lazy').setup {
   spec = {
@@ -53,16 +59,10 @@ require('lazy').setup {
   performance = {
     rtp = {
       -- disable some rtp plugins
-      disabled_plugins = {
-        'gzip',
-        'netrwPlugin',
-        'tarPlugin',
-        'tutor',
-        'zipPlugin',
-      },
+      disabled_plugins = disabled_plugins(),
     },
   },
 }
 
 -- Set colorscheme based on time of day
-vim.cmd.colorscheme 'melange'
+vim.cmd.colorscheme 'kanagawa-dragon'

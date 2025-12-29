@@ -4,6 +4,7 @@ return {
     'copilotlsp-nvim/copilot-lsp', -- (optional) for NES functionality
   },
   cmd = 'Copilot',
+  enabled = false,
   event = 'InsertEnter',
   opts = {},
   config = function()

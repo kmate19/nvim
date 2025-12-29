@@ -19,15 +19,6 @@ return {
       }
       local builtin = require 'telescope.builtin'
 
-      vim.api.nvim_create_autocmd('VimEnter', {
-        callback = function()
-          local bufname = vim.api.nvim_buf_get_name(0)
-          if bufname == '' or bufname:sub(1, 6) == 'oil://' or vim.fn.isdirectory(bufname) == 1 then
-            builtin.find_files()
-          end
-        end,
-      })
-
       vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Telescope Search Files' })
       vim.keymap.set('n', '<leader>w', builtin.live_grep, { desc = 'Telescope Live Grep' })
       vim.keymap.set('n', '<leader>wo', function()
