@@ -34,8 +34,7 @@ local disabled_plugins = function()
     'zipPlugin',
   }
 
-  if not vim.fn.has 'win32' then
-    print 'this is not windows'
+  if vim.fn.has 'macunix' == 1 then
     table.insert(disabled_plugins, 'netrwPlugin')
   else
     vim.keymap.set('n', '-', '<CMD>Ex<CR>', { desc = 'Open parent directory with Netrw.' })
