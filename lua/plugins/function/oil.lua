@@ -3,7 +3,7 @@ return {
     'stevearc/oil.nvim',
     lazy = false,
     opts = {},
-    enabled = vim.fn.has 'macunix',
+    enabled = not vim.fn.has 'win32',
     dependencies = {
       { 'echasnovski/mini.icons', opts = {} },
     },
