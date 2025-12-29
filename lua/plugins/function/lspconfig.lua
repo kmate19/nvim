@@ -59,6 +59,7 @@ return {
         svelte = {},
         clangd = {},
         gopls = {},
+        wgsl_analyzer = {},
         ts_ls = {},
         jsonls = {},
         stylua = {},
