@@ -60,6 +60,10 @@ return {
         show_on_keyword = true,
         show_on_insert = true,
       },
+      window = {
+        border = 'none',
+        direction_priority = { 's', 'n' },
+      },
     },
 
     -- only use rust binary for fuzzy matching

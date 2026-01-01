@@ -61,6 +61,8 @@ return {
         gopls = {},
         wgsl_analyzer = {},
         ts_ls = {},
+        laravel_ls = {},
+        intelephense = {},
         jsonls = {},
         stylua = {},
         -- vue setup needs to be remade
