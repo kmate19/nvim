@@ -93,6 +93,23 @@ return {
         },
       })
 
+      vim.lsp.config('clangd', {
+        cmd = {
+          'clangd',
+          '--background-index',
+          '--clang-tidy',
+          '--completion-style=bundled',
+          '--cross-file-rename',
+          '--header-insertion=iwyu',
+        },
+        init_options = {
+          clangdFileStatus = true, -- Provides information about activity on clangd’s per-file worker thread
+          usePlaceholders = true,
+          completeUnimported = true,
+          semanticHighlighting = true,
+        },
+      })
+
       -- MANUALLY MANAGED
       -- rust lsp config
       vim.lsp.config('rust_analyzer', {
