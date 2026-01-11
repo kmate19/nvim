@@ -1,5 +1,7 @@
 local O = vim.opt
 
+O.guicursor = ''
+
 -- want virtual text, but not virtual lines, virtual lines are too distracting, but look cool though, maybe look into it later
 vim.diagnostic.config { virtual_text = true, virtual_lines = false }
 
