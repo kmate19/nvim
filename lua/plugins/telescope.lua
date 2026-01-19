@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release; cmake --build build --config Release",
 	},
 	{
 		-- TODO: replace with snacks picker sometime
@@ -26,7 +26,9 @@ return {
 			end, { desc = "Telescope Live Grep Open Buffers" })
 			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Telescope Search Buffers" })
 
-			require("telescope").load_extension("fzf")
+			if vim.fn.has("macunix") == 1 then
+				require("telescope").load_extension("fzf")
+			end
 		end,
 	},
 }
