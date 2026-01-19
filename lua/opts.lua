@@ -1,14 +1,11 @@
 local O = vim.opt
 
-O.guicursor = ''
+vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 
--- want virtual text, but not virtual lines, virtual lines are too distracting, but look cool though, maybe look into it later
-vim.diagnostic.config { virtual_text = true, virtual_lines = false }
-
-O.winborder = 'solid'
+O.winborder = "solid"
 
 -- clipboard unnamedplus for system clipboard
-O.clipboard = 'unnamedplus'
+O.clipboard = "unnamedplus"
 
 ---- indenting
 O.shiftwidth = 4
@@ -23,13 +20,12 @@ O.breakindent = true
 
 -- (no) folding
 O.foldenable = false
-O.foldmethod = 'manual'
+O.foldmethod = "manual"
 O.foldlevelstart = 99
 
 -- linewrap
 O.wrap = false
 
--- swapfile/undofile
 O.swapfile = false
 O.undofile = true
 
@@ -38,7 +34,7 @@ O.relativenumber = true
 O.nu = true
 
 -- usable mouse in all modes
-O.mouse = 'a'
+O.mouse = "a"
 
 -- search
 O.ignorecase = true
@@ -47,11 +43,7 @@ O.smartcase = true
 -- no beep
 O.vb = true
 
--- signcolumn
-O.signcolumn = 'yes'
-
--- update time for swapfile and cursorhold (not using swap)
-O.updatetime = 400
+O.signcolumn = "yes"
 
 -- how long to wait for keypresses after pressing a modifier key eg. <C>
 O.timeoutlen = 400
@@ -61,13 +53,13 @@ O.splitright = true
 O.splitbelow = true
 
 -- change how chars look in list mode
-O.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+O.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- prettier replace view
-O.inccommand = 'split'
+O.inccommand = "split"
 
 -- i like big scrolloff
-O.scrolloff = 8
+O.scrolloff = 10
 
 -- line at 80 for code line length sanity
-O.colorcolumn = '80'
+O.colorcolumn = "80"
