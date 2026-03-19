@@ -6,6 +6,10 @@ return {
 		keymap = { preset = "enter" },
 
 		completion = {
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 0,
+			},
 			list = {
 				-- limit max items to 60 to reduce performance issues, and realistically you wont need more than 60 items anyways
 				max_items = 60,

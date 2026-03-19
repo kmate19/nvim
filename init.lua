@@ -40,11 +40,11 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 		{
-			"ellisonleao/gruvbox.nvim",
+			"rockerBOO/boo-colorscheme-nvim",
 			priority = 1000,
-			config = true,
+			-- config = true,
 			init = function()
-				vim.cmd.colorscheme("gruvbox")
+				vim.cmd.colorscheme("boo")
 			end,
 		},
 	},
