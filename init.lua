@@ -36,17 +36,26 @@ local disabled_plugins = function()
 	return disabled_plugins
 end
 
+local colorschemes = {
+	{
+		"rockerBOO/boo-colorscheme-nvim",
+		priority = 1000,
+	},
+	{
+		"Everblush/nvim",
+		as = "everblush",
+		priority = 1000,
+	},
+	{
+		"nyoom-engineering/oxocarbon.nvim",
+		priority = 1000,
+	},
+}
+
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
-		{
-			"rockerBOO/boo-colorscheme-nvim",
-			priority = 1000,
-			-- config = true,
-			init = function()
-				vim.cmd.colorscheme("boo")
-			end,
-		},
+		colorschemes,
 	},
 	checker = {
 		enabled = false,
@@ -60,3 +69,5 @@ require("lazy").setup({
 		},
 	},
 })
+
+vim.cmd.colorscheme("everblush")

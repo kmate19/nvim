@@ -50,6 +50,13 @@ return {
 			desc = "Git Browse",
 		},
 		{
+			"<leader>gb",
+			function()
+				Snacks.git.blame_line()
+			end,
+			desc = "Detailed Git Blame",
+		},
+		{
 			"<leader>gf",
 			function()
 				Snacks.lazygit.log_file()
