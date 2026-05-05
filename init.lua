@@ -70,4 +70,4 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("everblush")
+vim.cmd.colorscheme("oxocarbon")

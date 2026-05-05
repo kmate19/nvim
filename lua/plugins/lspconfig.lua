@@ -61,6 +61,7 @@ return {
 				gopls = {},
 				wgsl_analyzer = {},
 				ts_ls = {},
+				dartls = {},
 				laravel_ls = {},
 				intelephense = {},
 				jsonls = {},
