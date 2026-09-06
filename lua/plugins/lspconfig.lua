@@ -61,7 +61,7 @@ return {
 				gopls = {},
 				wgsl_analyzer = {},
 				ts_ls = {},
-				dartls = {},
+				-- dartls = {},
 				laravel_ls = {},
 				intelephense = {},
 				jsonls = {},
@@ -97,6 +97,7 @@ return {
 				cmd = {
 					"clangd",
 					"--background-index",
+					"--clang-tidy",
 					"--completion-style=bundled",
 					"--cross-file-rename",
 					"--header-insertion=iwyu",
