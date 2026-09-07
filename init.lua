@@ -50,6 +50,22 @@ local colorschemes = {
 		"nyoom-engineering/oxocarbon.nvim",
 		priority = 1000,
 	},
+	{
+		"olivercederborg/poimandres.nvim",
+		priority = 1000,
+		lazy = false,
+		config = function()
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				pattern = "poimandres",
+				callback = function()
+					local orange = "#ff8b39"
+					vim.api.nvim_set_hl(0, "Comment", { fg = orange })
+					vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
+					vim.api.nvim_set_hl(0, "@lsp.type.comment", { link = "Comment" })
+				end,
+			})
+		end,
+	},
 }
 
 require("lazy").setup({
@@ -70,4 +86,4 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("oxocarbon")
+vim.cmd.colorscheme("poimandres")

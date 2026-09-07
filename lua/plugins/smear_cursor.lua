@@ -1,5 +1,6 @@
 return {
 	"sphamba/smear-cursor.nvim",
+	enabled = false,
 	opts = { -- Default  Range
 		time_interval = 7,
 		-- stiffness = 0.9,
