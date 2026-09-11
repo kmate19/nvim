@@ -15,6 +15,8 @@ M.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]
 -- quick command mode in normal mode
 M.set("n", ";", ":")
 
+M.set("n", "<leader>x", "<cmd>bdelete<CR>")
+
 -- black hole register for c, r and x so its not annoying
 M.set("n", "x", '"_x')
 M.set("n", "c", '"_c')
