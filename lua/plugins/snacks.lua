@@ -4,6 +4,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 999,
 	lazy = false,
+	enabled = false,
 	-- TODO: check out the picker to replace telescope
 	opts = {
 		bigfile = { enabled = false },

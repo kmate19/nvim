@@ -6,6 +6,7 @@ return {
 			css = { "prettierd" },
 			rust = { "rustfmt", lsp_format = "fallback" },
 			html = { "prettierd" },
+			cpp = { "clang_format" },
 			typescriptreact = { "prettierd" },
 			javascriptreact = { "prettierd" },
 			typescript = { "prettierd" },
