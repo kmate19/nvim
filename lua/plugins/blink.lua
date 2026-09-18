@@ -19,7 +19,9 @@ return {
 				selection = {
 					-- dont preselect items in cmdline as i accept suggestions with enter so it would be annoying to have a preselected item
 					preselect = function(ctx)
-						return ctx.mode ~= "cmdline" and not require("blink.cmp").snippet_active({ direction = 1 })
+						local iscmdline = ctx.mode == "cmdline"
+
+						return not iscmdline
 					end,
 				},
 			},
@@ -49,7 +51,7 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "snippets", "lsp", "path", "buffer" },
+			default = { "lsp", "snippets", "path", "buffer" },
 
 			providers = {
 				cmdline = {

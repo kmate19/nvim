@@ -47,6 +47,26 @@ local colorschemes = {
 		priority = 1000,
 	},
 	{
+		"hachy/eva01.vim",
+		as = "eva",
+		priority = 1000,
+	},
+	{
+		"wtfox/luna.nvim",
+		as = "luna",
+		priority = 1000,
+	},
+	{
+		"uhs-robert/oasis.nvim",
+		as = "oasis",
+		priority = 1000,
+	},
+	{
+		"nlknguyen/papercolor-theme",
+		as = "papercolor",
+		priority = 1000,
+	},
+	{
 		"nyoom-engineering/oxocarbon.nvim",
 		enabled = false,
 		priority = 1000,
@@ -87,4 +107,4 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("poimandres")
+vim.cmd.colorscheme("forest_stream")

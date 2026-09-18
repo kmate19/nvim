@@ -2,8 +2,8 @@ local O = vim.opt
 
 vim.diagnostic.config({ virtual_text = true, severity_sort = true })
 
-O.winborder = "solid"
-O.cursorline = true
+O.winborder = "bold"
+O.cursorline = false
 
 -- clipboard unnamedplus for system clipboard
 O.clipboard = "unnamedplus"
