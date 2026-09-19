@@ -67,6 +67,10 @@ local colorschemes = {
 		priority = 1000,
 	},
 	{
+		"Mofiqul/vscode.nvim",
+		priority = 1000,
+	},
+	{
 		"nyoom-engineering/oxocarbon.nvim",
 		enabled = false,
 		priority = 1000,
@@ -89,6 +93,8 @@ local colorschemes = {
 	},
 }
 
+require("autothemeswitch").setup()
+
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
@@ -107,4 +113,4 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd.colorscheme("forest_stream")
+vim.cmd.colorscheme("vscode")
