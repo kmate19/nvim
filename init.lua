@@ -93,8 +93,6 @@ local colorschemes = {
 	},
 }
 
-require("autothemeswitch").setup()
-
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
