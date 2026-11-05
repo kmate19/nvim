@@ -18,7 +18,7 @@ return {
 		-- async = true,
 
 		format_on_save = {
-			timeout_ms = 500, -- 1 second timeout
+			timeout_ms = 500,
 			lsp_fallback = true,
 		},
 	},

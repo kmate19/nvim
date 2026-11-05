@@ -1,3 +1,9 @@
+if vim.version.lt(vim.version(), "0.12") then
+	vim.api.nvim_echo({ { "This config requires neovim version 0.12 or greater" } }, true, {})
+	vim.fn.getchar()
+	os.exit(1)
+end
+
 -- these need to come first
 vim.g.mapleader = " "
 vim.g.localleader = " "
@@ -38,41 +44,7 @@ end
 
 local colorschemes = {
 	{
-		"rockerBOO/boo-colorscheme-nvim",
-		priority = 1000,
-	},
-	{
-		"Everblush/nvim",
-		as = "everblush",
-		priority = 1000,
-	},
-	{
-		"hachy/eva01.vim",
-		as = "eva",
-		priority = 1000,
-	},
-	{
-		"wtfox/luna.nvim",
-		as = "luna",
-		priority = 1000,
-	},
-	{
-		"uhs-robert/oasis.nvim",
-		as = "oasis",
-		priority = 1000,
-	},
-	{
-		"nlknguyen/papercolor-theme",
-		as = "papercolor",
-		priority = 1000,
-	},
-	{
 		"Mofiqul/vscode.nvim",
-		priority = 1000,
-	},
-	{
-		"nyoom-engineering/oxocarbon.nvim",
-		enabled = false,
 		priority = 1000,
 	},
 	{
