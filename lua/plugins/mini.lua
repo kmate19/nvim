@@ -16,6 +16,9 @@ return {
 			require("mini.tabline").setup({
 				vim.keymap.set("n", "<Tab>", ":bnext<CR>"),
 				vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>"),
+
+				vim.api.nvim_set_hl(0, "MiniTablineCurrent", { fg = "#ffffff", bg = "#3f3f3f", bold = true }),
+				vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { fg = "#ff9900", bg = "#3f3f3f", bold = true }),
 			})
 		end,
 	},

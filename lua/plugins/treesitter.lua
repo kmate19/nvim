@@ -8,7 +8,7 @@ return {
 				config = function()
 					local tsctx = require("treesitter-context")
 
-					tsctx.enable = false
+					tsctx.disable()
 
 					vim.keymap.set("n", "<leader>tsc", "<cmd>TSContext toggle<CR>")
 				end,
